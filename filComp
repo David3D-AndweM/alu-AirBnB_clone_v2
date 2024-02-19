@@ -1,0 +1,12 @@
+import tarfile
+import os
+
+def compress_directory(directory_path, output_tar):
+    with tarfile.open(output_tar, "w:gz") as tar:
+        tar.add(directory_path, arcname=os.path.basename(directory_path))
+
+if __name__ == "__main__":
+    directory_path = "/path/to/your/directory"
+    output_tar = "/path/to/your/output.tar.gz"
+    compress_directory(directory_path, output_tar)
+
